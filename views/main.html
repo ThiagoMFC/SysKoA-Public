@@ -1,0 +1,39 @@
+{{define "main"}}
+<article class="grid-container">
+    <div class="grid-x grid-margin-x" id="content">
+        <div class="medium-2 cell" style="margin-top: 5%;">
+            <div class="sticky" data-sticky data-anchor="content">
+                <div class="tbox2" id="patient">
+                    <a style="color: black;" class="bgtext2" href="/admin/adminlogin/admincreatebuilding/create"><i class="far fa-user"></i>Add Building</a></br>
+                    <hr/>
+                    <a style="color: black;" class="bgtext2" href="/admin/adminlogin/admincreatehero/create"><i class="far fa-user"></i>Add Hero</a></br>
+                    <hr/>
+                    <a style="color: black;" class="bgtext2" href="/admin/adminlogin/admincreategear/create"><i class="far fa-user"></i>Add Gear</a></br>
+                </div>
+            </div>
+        </div>
+        <div class="medium-8 cell" style="margin-top: 5%;">
+            {{if eq .UKey "/admin/adminlogin/feed"}}
+            {{template "feed" .}}
+            {{else if eq .UKey "/admin/adminlogin/admincreatebuilding/create"}}
+            {{template "buildingForm" .}}
+            {{else if eq .UKey "/admin/adminlogin/admincreatehero/create"}}
+            {{template "heroForm" .}}
+            {{else if eq .UKey "/admin/adminlogin/admincreategear/create"}}
+            {{template "gearForm" .}}  
+            {{end}}
+        </div>
+        <div class="medium-2 cell" style="margin-top: 5%;">
+            <div class="sticky" data-sticky data-anchor="content">
+                <div class="tbox2">
+                    </br>
+                    <p style="color: black;">nothing</p>
+                    <hr/> 
+                    </br>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+{{end}}

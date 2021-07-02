@@ -1,0 +1,22 @@
+{{define "nav"}}
+<div class="top-bar-container" data-sticky-container>
+  <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
+    <div class="top-bar" style="background-color:black; min-height: 55px;">
+      <div class="top-bar-left">
+        <a href="/" style="color: white; font-size: large; margin-left: 8%;">KoA Admin</a>
+      </div>
+      {{if .Name}}
+      <div class="top-bar-center">
+        <div id="topnav">
+            <a href="#" style="color: white; font-size: medium; margin-top: 5px;"><i class="far fa-user"></i>{{.Name}}</a>
+        </div>
+      </div>  
+      <div class="top-bar-left">
+        <a href="/logout" style="color: white; font-size: medium; margin-top: 5px; margin-left: 82%">Logout</a> 
+      </div>
+      {{end}}
+    </div>
+  </div>
+</div> 
+
+{{end}}
